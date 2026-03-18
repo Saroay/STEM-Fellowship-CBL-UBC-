@@ -24,14 +24,10 @@ R does not automatically include advanced graphing tools. ggplot2 gives us easy 
 
 ## Part 2: Understanding Data Types (Important!)
 Before making graphs, we need to understand types of data:
-Numerical data → numbers (e.g., age, height, income)
-Categorical data → groups or labels (e.g., gender, continent)
+Numerical data → numbers (e.g., age, height, income); Categorical data → groups or labels (e.g., gender, continent)
 
 Types of Comparisons: 
-Numerical + Numerical → Scatterplot
-Categorical + Numerical → Boxplot
-Categorical + Categorical → Bar graph
-Numerical (single variable) → Histogram (frequency on y-axis)
+Numerical + Numerical → Scatterplot; Categorical + Numerical → Boxplot; Categorical + Categorical → Bar graph; Numerical (single variable) → Histogram (frequency on y-axis)
 
 Choosing the right graph depends on your data!
 
