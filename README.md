@@ -12,7 +12,7 @@ By the end of this activity, you will:
 - Understand when to use different types of graphs
 - Improve graphs to make them clearer and easier to understand
  
-> **Note:** All code examples are shown in code blocks. In the Questions section, you will write your own code.
+> **Note:** All code examples are shown in code blocks
  
 ---
  
