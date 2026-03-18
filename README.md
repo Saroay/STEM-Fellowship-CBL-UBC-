@@ -269,7 +269,7 @@ Pick one graph you created in this lab.
  
 ---
  
-*STEM Fellowship · Challenge Based Learning · UBC*
+*STEM Fellowship · CBL · UBC*
 
 
 
