@@ -1,5 +1,5 @@
 # Introduction to Graphing in R
-### Bioinformatics Beginner Lab · ~1.5 hours
+### Bioinformatics Beginner Lab (~1.5 hours)
  
 ---
  
