@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "###  histogram of brain mass to body mass for mammals\n\nlibrary(dplyr)\nmammalData = read.csv(\"/Users/whitlock/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/brainsize to body size histogram/mammalData.csv\")\n\nBBratio = mammalData$Brain_Mass_.g./mammalData$Body_Mass_.g.\nhist(BBratio)\n\n\nplot(Brain_Mass_.g.~mammalData$Body_Mass_.g., data=mammalData)\n\n\nplot(log(Brain_Mass_.g.)~ log(mammalData$Body_Mass_.g.), data=mammalData)\n\n\nhist(log(mammalData$Body_Mass_.g.))\n\n\nhist(mammalData$EQ)\n\n\nprimateData=filter(mammalData,Order==\"Primates\")\nhist(primateData$EQ)\nhist(primateData$Brain_Mass_.g./primateData$Body_Mass_.g.)\n",
+    "created" : 1554334637368.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2200010143",
+    "id" : "B3AFA8B5",
+    "lastKnownWriteTime" : 1531524358,
+    "last_content_update" : 1531524358,
+    "path" : "~/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/brainsize to body size histogram/mammal brains and bodies.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled4"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

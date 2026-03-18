@@ -1,0 +1,27 @@
+"0"," sampledSelCoeff = sample(HIVData$EstSelCoeff, size = 100)"
+"0"," boot.median <- function(x, i){ median(x[i]) }"
+"0"," boot(data=sampledSelCoeff, statistic = boot.median, R = 1000)"
+"1","
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+"
+"1","
+Call:
+"
+"1","boot(data = sampledSelCoeff, statistic = boot.median, R = 1000)
+"
+"1","
+
+Bootstrap Statistics :
+"
+"1","   "
+"1","    original"
+"1","      bias  "
+"1","  std. error"
+"1","
+t1*"
+"1"," 0.008330566"
+"1"," 0.000274785"
+"1"," 0.001203516"
+"1","
+"

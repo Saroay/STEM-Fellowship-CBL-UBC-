@@ -1,0 +1,26 @@
+"0"," boot.mean <- function(x, i){ mean(x[i]) }"
+"0"," boot(data=sampledSelCoeff, statistic = boot.mean, R = 1000)"
+"1","
+ORDINARY NONPARAMETRIC BOOTSTRAP
+
+"
+"1","
+Call:
+"
+"1","boot(data = sampledSelCoeff, statistic = boot.mean, R = 1000)
+"
+"1","
+
+Bootstrap Statistics :
+"
+"1","   "
+"1","  original"
+"1","       bias  "
+"1","  std. error"
+"1","
+t1*"
+"1"," 0.1333817"
+"1"," -0.001076308"
+"1","  0.03022048"
+"1","
+"

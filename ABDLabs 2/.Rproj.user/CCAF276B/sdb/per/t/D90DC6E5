@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "---\ntitle: \"Testes size and number of male littermates\"\nauthor: \"M. Whitlock\"\ndate: \"7/13/2018\"\noutput: html_document\n---\n# Possible example of t-test, regression, graphics, etc.\n\nData from Sibling rivalry: Males with more brothers develop larger testes\n\nHeidi S Fisher, Kristin A Hook, W. David Weber, Hopi E. Hoekstra\ndoi: https://doi.org/10.1101/332775\n\nhttps://www.biorxiv.org/content/early/2018/05/28/332775\n\nHeidi kindly sent me the dryad data file\n\n## data\n\n```{r}\n\nlibrary(ggplot2)\nlibrary(dplyr)\ntestesData <- read.csv(\"///Users/whitlock/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/testes size/testesSize.csv\")\n\nsummary(testesData)\n```\n\n\n## testes size is larger with more male littermates\n\n```{r}\n\nggplot(testesData, aes(x=NumMaleLittermates, y=MeanTestisArea_mm2)) +\n  geom_point() +\n  theme_classic() +\n  xlab(\"Number of male littermates\") +\n  ylab(\"Testes area (mm^2)\") +theme_classic()\n\ntestesRegression <- lm(MeanTestisArea_mm2 ~ NumMaleLittermates, data = testesData)\n\ntestesRegression \n\nsummary(testesRegression)\n```\n\n\n## Distribution of testes size\n\n```{r}\nhist(testesData$MeanTestisArea_mm2)\n```\n\n##  Reproductive success depends on testes size, somewhat\n\nFor a binary \"sired offspring\"\" or not:\n\n```{r}\nt.test(MeanTestisArea_mm2~Sired, testesData, na.rm=TRUE)\n```\n```{r}\ntestesData %>% group_by(Sired) %>% summarize(var=var(MeanTestisArea_mm2))\n```\n```{r}\n########   Summary values\nx= testesData$NumMaleLittermates\ny= testesData$MeanTestisArea_mm2\n\nlength(x)\nsum(x)\n\nsum(y)\n\nsum(x^2)\n\nsum(y^2)\n\nsum(x*y)\n\nmean(x)\n\nmean(y)\n\nsd(x)\n\nsd(y)\n\nsum((x-mean(x))*(y-mean(y)))\n\nsum((x-mean(x))^2)\n\nsum((y-mean(y))^2)\n```",
+    "created" : 1557184113074.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1452938512",
+    "id" : "D90DC6E5",
+    "lastKnownWriteTime" : 1557184879,
+    "last_content_update" : 1557184879411,
+    "path" : "~/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/testes size/testes size and male littermates.Rmd",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

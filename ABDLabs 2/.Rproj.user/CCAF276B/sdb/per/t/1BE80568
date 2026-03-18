@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "#### Looking at Kingsolver et al 2001 dataset\n\nselData <- read.csv(\"/Users/whitlock/Desktop/Kingsolver/Kingsolveretal.csv\",stringsAsFactors=FALSE,na.strings=\"na\")\n\nsummary(selData)\nselData$N=as.numeric(selData$N)\n\n#FIltering the data set for lines that inclide a standard error for either the linear gradiaent or the linear differential\nselDataSEs = filter(selData,(!is.na(Grad.linear.StErr))|(!is.na(Diff.linear.StErr)))\nlength(selDataSEs$species)\n\n#Overall realtionship with N\nplot(selData$Grad.linear.value ~ log(as.numeric(selData$N)))\n\n# Calculating an approximate t value for each  linear gradient with a SE, and  p-value\nselDataSEs$t.Grad = selDataSEs$Grad.linear.value / selDataSEs$Grad.linear.StErr\n\nselDataSEsTEMP = filter(selDataSEs,t.Grad<10)\nhist(selDataSEsTEMP$t.Grad,breaks = seq(-10, 10, 1))\n\nselDataSEsTEMP = filter(selDataSEs,t.Grad<100)\n\n#Relationship with t and N for studeis that report SE\nplot(selDataSEsTEMP$t.Grad ~ log(as.numeric(selDataSEsTEMP$N),10))\nplot(selDataSEsTEMP$t.Grad ~ log(as.numeric(selDataSEsTEMP$N),10), ylim=c(-8,9))\n\nplot(selDataSEsTEMP$Grad.linear.value ~ selDataSEsTEMP$N) \n\nselDataSEsTEMP = filter(selDataSEs,t.Grad<10) \n\nfilter(selDataSEs,t.Grad>100)\n\n\n### Drawing the null distribution\n\ntNeutral = rep(0,length(selDataSEsTEMP$N))\nfor(i in 1:length(selDataSEsTEMP$N)) tNeutral[i]=rt(n=1,df=selDataSEsTEMP$N[i]-1)\nplot(tNeutral ~ log(as.numeric(selDataSEsTEMP$N),10), ylim=c(-8,9))\n\n\n###  ABsolute value\nplot(abs(selDataSEsTEMP$Grad.linear.value) ~ selDataSEsTEMP$N) \nplot(abs(selDataSEsTEMP$t.Grad) ~ log(as.numeric(selDataSEsTEMP$N),10), ylim=c(0,9))\n\n##############neutral comparison with abs\nplot(abs(tNeutral) ~ log(as.numeric(selDataSEsTEMP$N),10), ylim=c(0,9))\n\n############## Dist assuming true effect is half that observed\nmean(abs(selDataSEsTEMP$t.Grad))\n\ntHalf = rep(0,length(selDataSEsTEMP$N))\nfor(i in 1:length(selDataSEsTEMP$N)) tHalf[i]=rt(n=1,df=selDataSEsTEMP$N[i]-1,ncp=1.42)\nplot(abs(tHalf) ~ log(as.numeric(selDataSEsTEMP$N),10), ylim=c(0,9))\n",
+    "created" : 1557598451931.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2777696473",
+    "id" : "1BE80568",
+    "lastKnownWriteTime" : 1558551039,
+    "last_content_update" : 1558551039302,
+    "path" : "~/Desktop/Kingsolver/kingsolver.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

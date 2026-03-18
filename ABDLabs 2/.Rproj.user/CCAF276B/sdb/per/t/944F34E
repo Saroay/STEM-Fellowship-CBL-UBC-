@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "####  Logistic regression from Figure 5A of Jousimo et al 2014 Science\nlibrary(MASS)\n\nextData = read.csv(\"///Users/whitlock/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/Jousimo et al paper/Data Figure 5A.csv\")\n\nsummary(extData)\n\n\nggplot(extData, aes(x=S, y=Ext)) + geom_point(size=0.6) + \n  stat_smooth(colour=\"firebrick\",method=\"glm\", method.args=list(family=\"binomial\"), se=FALSE) +\n  labs (x= \"Connectivity\", y=\"Extinction probability\" ) +\n  theme_classic()\n\n\nextGlm <- glm(Ext ~ S, data = extData, family = binomial(link = logit))\n\nsummary(extGlm)\n\nconfint(extGlm)\n\n\ndose.p(extGlm, p = 0.50)\n\n\nanova(extGlm, test = \"Chi\")\n",
+    "created" : 1555456277663.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3654113120",
+    "id" : "944F34E",
+    "lastKnownWriteTime" : 1557123911,
+    "last_content_update" : 1557123911304,
+    "path" : "~/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/Jousimo et al paper/Jousimo et al fig 5a.R",
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

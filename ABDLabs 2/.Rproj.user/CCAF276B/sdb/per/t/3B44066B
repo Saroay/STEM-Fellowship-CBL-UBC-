@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "######## Analysis of Biological Data Labs -- Learning the tools --  Week 11 ######\n# Correlation and regression\n# This file contains all of the commands in the Learning the Tools section of week 11. \n\nlibrary(ggplot2)\n\nguppyData <- read.csv(\"Data/chap02e3bGuppyFatherSonAttractiveness.csv\")\n\nggplot(guppyData, aes(x=fatherOrnamentation, y=sonAttractiveness)) +\n  geom_point() +\n  theme_minimal() +\n  xlab(\"Father's ornamentation\") +\n  ylab(\"Son's attractiveness\") \n\n#### Correlation  ####\n\ncor(guppyData$fatherOrnamentation, guppyData$sonAttractiveness)\n\ncor(guppyData$fatherOrnamentation, guppyData$sonAttractiveness)^2\n\ncor.test(guppyData$fatherOrnamentation, guppyData$sonAttractiveness)\n\n#### Spearman's correlation  ####\n\ncor.test(guppyData$fatherOrnamentation, guppyData$sonAttractiveness, method = \"spearman\")\n\n\n\n#### Linear regression  ####\n\nguppyRegression <- lm(sonAttractiveness ~ fatherOrnamentation, data = guppyData)\n\nguppyRegression \n\nsummary(guppyRegression)\n\nggplot(guppyData, aes(x=fatherOrnamentation, y=sonAttractiveness)) +\n  geom_point() +\n  theme_minimal() +\n  xlab(\"Father's ornamentation\") +\n  ylab(\"Son's attractiveness\") +    \n  geom_smooth(method = lm)\n\nggplot(guppyData, aes(x=fatherOrnamentation, y=sonAttractiveness)) +\n  geom_point() +\n  theme_minimal() +\n  xlab(\"Father's ornamentation\") +\n  ylab(\"Son's attractiveness\") +    \n  geom_smooth(method = lm, se = FALSE)\n\n#Residuals\n\nresiduals(guppyRegression)\n\nplot(guppyData$fatherOrnamentation, residuals(guppyRegression))\nabline(h=0)\n\n",
+    "created" : 1557017143842.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2466282393",
+    "id" : "3B44066B",
+    "lastKnownWriteTime" : 1545186440,
+    "last_content_update" : 1545186440,
+    "path" : "~/Desktop/ABDLabs Master file/ABDLabs/LearningTheTools/LearningToolsWeek11.R",
+    "project_path" : "LearningTheTools/LearningToolsWeek11.R",
+    "properties" : {
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

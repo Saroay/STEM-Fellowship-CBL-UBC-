@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "####  bumblebee climate chane data read from Fig 1b in Kerr et al\n\nbeeData <- read.csv(\"/Users/whitlock/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/16 17 new examples/BumblebeeClimateChange.csv\")\n\nsummary(beeData)\n\ncor(beeData$coolLimit, beeData$changeCoolLimit)\n\ncor(beeData$coolLimit, beeData$changeCoolLimit)^2\n\ncor.test(beeData$coolLimit, beeData$changeCoolLimit)\n\nplot(beeData)\n\nbeeRegression <- lm(changeCoolLimit ~ coolLimit, data = beeData)\n\nbeeRegression \n\nsummary(beeRegression)\n\n\nhist(residuals(beeRegression))\n\nplot(beeData$coolLimit, residuals(beeRegression))\nabline(h=0)\n\n\nggplot(beeData, aes(x=coolLimit, y=changeCoolLimit)) +\n  geom_point(colour=\"firebrick\") +\n  theme_minimal() +\n  xlab(\"Temperature at historical cool limit (°C)\") +\n  ylab(\"Recent change in temperature at cool limit (°C)\") +theme_classic()\n\n########   Summary values\nx= beeData$coolLimit\ny=beeData$changeCoolLimit\n\nlength(x)\nsum(x)\n\nsum(y)\n\nsum(x^2)\n\nsum(y^2)\n\nsum(x*y)\n\nmean(x)\n\nmean(y)\n\nsd(x)\n\nsd(y)\n\nsum((x-mean(x))*(y-mean(y)))\n\nsum((x-mean(x))^2)\n\nsum((y-mean(y))^2)",
+    "created" : 1557017052251.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2381613782",
+    "id" : "67D3B38A",
+    "lastKnownWriteTime" : 1557124551,
+    "last_content_update" : 1557124551302,
+    "path" : "~/Desktop/ Get to Work!/Stats Book/3rd edition/new examples/16 17 new examples/bee climate change.R",
+    "project_path" : null,
+    "properties" : {
+    },
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
